@@ -6,7 +6,7 @@ export default function Navbar() {
 
 
     return (
-        <Stack direction='row' justifyContent='space-between' alignItems='center' height={80} border={1}>
+        <Stack direction='row' justifyContent='space-between' alignItems='center' height={80} >
             <Box sx={{display : "flex" , flexDirection : "row" , alignItems : "center" , gap : 1}}>
                 <img style={{ width: 38, height: 47  }} src={logo} alt='fsdfs' />
                 <Typography sx={{ fontFamily: 'Work Sans', fontWeight: 600 , fontSize : 30}}>TheBox</Typography>
