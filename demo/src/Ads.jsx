@@ -22,7 +22,7 @@ export default function Ads() {
                 <Typography sx={{ fontSize: 24, fontFamily: 'Work Sans' }}>Just one call away:  <Typography component='span' sx={{ textDecoration: "underline" }}>+84 1102 2703</Typography></Typography>
             </Box>
 
-            <Button variant='outlined' sx={{ border: 'solid 2px white', color: '#FFFFFF' }}>Get your consultation</Button>
+            <Button variant='outlined' sx={{ border: 'solid 2px white', color: '#FFFFFF' , "&:hover" : {color : 'black' , backgroundColor : '#FFFFFF' } }}>Get your consultation</Button>
         </Stack>
     )
 }

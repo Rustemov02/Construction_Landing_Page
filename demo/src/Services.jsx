@@ -6,7 +6,6 @@ export default function Services() {
 
     const items = [
         {
-            // 
             img: <MapsHomeWork sx={{ fontSize: 45 }} />,
             title: "Construction",
             bgColor: '#FFFFFF',
@@ -48,14 +47,14 @@ export default function Services() {
     const hr = (
         <Box
             component="span"
-            sx={{ fontWeight: 120, color: 'gray' }}
+            sx={{ fontWeight: 900, color: '#E0E3EB' }}
         >
             ━━
         </Box>
     );
 
     const styles = {
-        customBox: { 
+        customBox: {
             borderRadius: 2,
             mx: 4,
             display: 'flex',
@@ -69,12 +68,12 @@ export default function Services() {
     }
 
     return (
-        <Stack bgcolor='#d1ebde' py={3}>
-            <Typography sx={{ fontFamily: "Work Sans", fontSize: 36, alignSelf: 'center' }}>Services</Typography>
+        <Stack bgcolor='#d1ebde' py={3} >
+            <Typography sx={{ fontFamily: "Work Sans", fontSize: 36, alignSelf: 'center' }} data-aos="fade-up">Services</Typography>
 
             <Stack direction='row' justifyContent='center' flexWrap='wrap' gap={5} py={7}>
                 {items.map((item, index) => (
-                    <Box key={index} sx={styles.customBox } style={{backgroundColor : `${item.bgColor}`}}>
+                    <Box key={index} sx={styles.customBox} style={{ backgroundColor: `${item.bgColor}` }} data-aos="fade-up">
                         <Box sx={{ color: `${item.color}` }}>
                             {item.img}
                         </Box>

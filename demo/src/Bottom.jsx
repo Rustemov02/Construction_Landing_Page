@@ -58,7 +58,7 @@ export default function Bottom() {
                     <Typography sx={{ fontWeight: 500, fontSize: '20px', fontFamily: 'Work Sans', color: '#2947A9' }}> NEWSLETTER  : </Typography>
                     <Box  >
                         <TextField size='small' label="Your email here" variant="outlined" />
-                        <Button variant='contained' sx={{ bgcolor: '#F9995D', marginLeft: 1, width: 136, height: 41 }}>Subscribe</Button>
+                        <Button onClick={()=>alert('Your @mail was sent ! Thank You :) ')} variant='contained' sx={{ bgcolor: '#F9995D', marginLeft: 1, width: 136, height: 41 }}>Subscribe</Button>
                     </Box>
                 </Stack>
 

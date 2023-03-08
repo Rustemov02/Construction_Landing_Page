@@ -12,7 +12,7 @@ export default function Stats() {
 
 
     return (
-        <Stack border={1} direction='row' justifyContent='center' py={10} px={10} spacing={15}>
+        <Stack direction='row' justifyContent='center' py={10} px={10} spacing={15}>
 
             <Stack width='50%' direction='row' flexWrap='wrap' >
                 <Stat2 />

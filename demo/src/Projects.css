@@ -1,0 +1,14 @@
+.link-item{ 
+    list-style-type: none;
+    cursor: pointer; 
+    color:  #C2C7D6 ;
+    font-size: 24px ;  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 20px;
+    transition: 0.5s;
+    border-left : solid #FFFFFF 5px;
+} 
+.active{
+    color : #2947A9;
+    border-left : solid #2947A9 5px;
+}

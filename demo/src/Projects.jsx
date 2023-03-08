@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Stack, Typography, Box, Card, CardMedia, CardContent } from "@mui/material";
+import { Stack, Typography, Box, Card, CardMedia, CardContent } from "@mui/material";
 import img1 from './images/filter1.jpg'
 import img2 from './images/filter2.jpg'
 import img3 from './images/filter3.jpg'
@@ -16,12 +16,14 @@ import other1 from './images/other1.jpg'
 import other2 from './images/other2.jpg'
 import other3 from './images/other3.jpg'
 import other4 from './images/other4.jpg'
+import './Projects.css' 
 
 export default function Projects() {
 
     const [project, setProject] = useState('all')
+    const [active, setActive] = useState("all")
 
-    const data = 
+    const data =
         [
             {
                 type: 'all',
@@ -50,7 +52,7 @@ export default function Projects() {
             {
                 type: 'commercial',
                 img: commer1,
-                title: 'Praesent maximus orci',
+                title: 'Wildstone Infra Hotel',
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             },
             {
@@ -62,7 +64,7 @@ export default function Projects() {
             {
                 type: 'commercial',
                 img: commer3,
-                title: 'Praesent maximus orci',
+                title: 'Mr. Parkinston\'s House',
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             },
             {
@@ -80,7 +82,7 @@ export default function Projects() {
             {
                 type: "residental",
                 img: resi2,
-                title: 'Praesent maximus orci',
+                title: 'Wildstone Infra Hotel',
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             },
             {
@@ -92,13 +94,13 @@ export default function Projects() {
             {
                 type: "residental",
                 img: resi4,
-                title: 'Praesent maximus orci',
+                title: 'Mr. Parkinston\'s House',
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             },
             {
                 type: 'other',
                 img: other1,
-                title: 'Praesent maximus orci',
+                title: 'Mr. Parkinston\'s House',
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             },
             {
@@ -110,7 +112,7 @@ export default function Projects() {
             {
                 type: 'other',
                 img: other3,
-                title: 'Praesent maximus orci',
+                title: 'Wildstone Infra Hotel',
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             },
             {
@@ -120,45 +122,31 @@ export default function Projects() {
                 location: '2972 Westheimer Rd. Santa Ana, Illinois'
             }
         ]
-    
-
-    const styles = {
-        customLink: {
-
-            textDecoration: 'none',
-            color: '#C2C7D6',
-            fontSize: 24,
-            paddingLeft: 3,
-            borderLeft: "solid 5px #FFFFFF",
-            '&:hover': {
-                cursor: 'pointer',
-                color: '#2947A9',
-                borderLeft: "solid 5px #2947A9",
-                transition: '0.5s'
-
-            }
-        }
-    }
 
     return (
-        <Stack direction="row" py={10} alignItems='flex-start' justifyContent='center'>
 
+        <Stack direction="row" py={10} alignItems='flex-start' justifyContent='space-around'>
 
-            <Stack width='50%'>
+            <Stack>
                 <Typography sx={{ color: '#292E3D', fontSize: 36, fontFamily: 'Work Sans', fontWeight: 700 }}>Projects</Typography>
 
-
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, py: 4 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, py: 4 }} data-aos="fade-right">
                     {['All', 'Commercial', 'Residental', 'Other'].map((item, index) => (
-                        <Link onClick={()=>setProject(item.toLocaleLowerCase())} sx={styles.customLink} key={index}>{item}</Link>
+                        <li onClick={() => {
+                            setProject(item.toLocaleLowerCase())
+                            setActive(item.toLocaleLowerCase())
+                        }}
+                            key={index}
+                            className={`link-item ${active == item.toLocaleLowerCase() && 'active'}`}
+                        >{item}
+                        </li>
                     ))}
                 </Box>
             </Stack>
 
-
-            <Stack direction='row' flexWrap='wrap' justifyContent='center' gap={4}>
+            <Stack width={800} direction='row' flexWrap='wrap' justifyContent='center' gap={4}>
                 {data.filter(item => item.type === `${project}`).map((item, index) => (
-                    <Card key={index} sx={{ width: 384 }}>
+                    <Card key={index} sx={{ width: 384 }} data-aos="fade-left">
                         <CardMedia
                             component="img"
                             height="194"
@@ -168,7 +156,6 @@ export default function Projects() {
                         <CardContent sx={{ backgroundColor: '#2947A9', display: 'flex', flexDirection: 'column', alignItems: "flex-start", gap: 1 }}>
                             <Typography variant="h5" component="div" sx={{ fontFamily: 'Work Sans', fontSize: 20, fontWeight: 700, color: "#FFFFFF" }}>{item.title}</Typography>
 
-
                             <Typography sx={{ fontFamily: 'Work Sans', fontSize: 18, fontWeight: 400, color: "#FFFFFF" }} color="text.secondary">
                                 {item.location}
                             </Typography>
@@ -176,6 +163,7 @@ export default function Projects() {
                     </Card>
                 ))}
             </Stack>
+
         </Stack>
     )
 }

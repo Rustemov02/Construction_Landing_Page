@@ -15,7 +15,7 @@ export default function Stat4() {
     }
 
     return (
-        <Stack width={280} sx={{position : 'relative'}} marginLeft={15} marginTop={12}>
+        <Stack width={280} sx={{position : 'relative'}} marginLeft={15} marginTop={12} data-aos="fade-up">
             <Card elevation={5} sx={{ width: 280, py: 3, px: 2 }}>
                 <Typography sx={{ fontSize: 72 }}>30</Typography>
                 <Typography sx={{ borderLeft: 'solid #F9995D 4px', fontSize: 24, px: 1 }}>Years in Business</Typography>

@@ -12,19 +12,18 @@ import CTA from './CTA'
 import Projects from './Projects'
 
 export default function App() {
-
-
+ 
   return (
-    <>
-      {/* <Hero />
+    <Stack>
+      <Hero />
       <About />
       <Services />
       <Stats />
       <Ads />
+      <Projects />
       <CTA />
       <Bottom />
-      <Footer /> */}
-      <Projects/>
-    </>
+      <Footer />
+    </Stack>
   )
 }

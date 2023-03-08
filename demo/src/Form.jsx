@@ -3,6 +3,8 @@ import { Stack, TextField, Box, Button } from "@mui/material";
 
 
 export default function Form() {
+
+    const [name, setName] = React.useState('')
     const styles = {
         customField: {
             width: '280px',
@@ -35,6 +37,10 @@ export default function Form() {
             px={3} py={2}>
 
             <TextField
+                onChange={(e) => {
+                    setName(e.target.value)
+                    console.log(name)
+                }}
                 sx={styles.customField}
                 size="small"
                 label="Your Name *"
@@ -67,7 +73,7 @@ export default function Form() {
                     rows={4}
                 />
             </Box>
-            <Button sx={styles.customButton}>Submit</Button>
+            <Button sx={styles.customButton} onClick={() => alert(` ${name} , Your message was sent  !`)}>Submit</Button>
         </Stack>
     )
 }

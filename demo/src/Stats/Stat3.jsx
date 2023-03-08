@@ -15,7 +15,7 @@ export default function Stat3() {
     }
 
     return (
-        <Stack width={280} sx={{position : 'relative'}} marginLeft={-7} marginTop={-3}>
+        <Stack width={280} sx={{position : 'relative'}} marginLeft={-7} marginTop={-3} data-aos="fade-up">
             <Card elevation={5} sx={{ width: 280, py: 3, px: 2 }}>
                 <Typography sx={{ fontSize: 72 }}>34</Typography>
                 <Typography sx={{ borderLeft: 'solid #F9995D 4px', fontSize: 24, px: 1 }}>Awards Win</Typography>
