@@ -3,8 +3,8 @@ import { Button, Stack, Typography } from "@mui/material";
 import Navbar from "./Navbar";
 import building from './images/building.jpg'
 import { Box } from "@mui/system";
-
 import { ArrowBack, ArrowForward } from '@mui/icons-material'
+import Typical from 'react-typical'
 
 export default function Hero() {
 
@@ -43,10 +43,14 @@ export default function Hero() {
         <Stack>
             <Navbar />
             <Stack sx={styles.customBackground}>
-                <Typography sx={styles.typography}>Building things is our mission.</Typography>
+                <Typography sx={styles.typography}> 
+                    <Typical
+                        loop={Infinity}
+                        steps={["Building things is our mission", 1000, "Lorem ipsum dolor sit amet.", 1000]}
+                    /></Typography>
                 <Stack border={1} width={416} sx={{ position: 'absolute', top: '75.3%', left: '72.1%' }}>
                     <Box sx={styles.customBox}>
-                        <Typography fontSize={20}>Featured projects</Typography>    
+                        <Typography fontSize={20}>Featured projects</Typography>
                         <Typography fontSize={24}>Golden center , Chicago</Typography>
                     </Box>
 
